@@ -51,7 +51,7 @@ public class addPlaceStepDef extends Utils{
 // constructor will be called with value of resource which you pass
 		 
 		APIResources resourceAPI =  APIResources.valueOf(Resource);
-		System.out.println(resourceAPI.getResource());
+		
 	    if(method.equalsIgnoreCase("Post"))
 		 response =request.when().post(resourceAPI.getResource());
 	    else if(method.equalsIgnoreCase("Get"))
