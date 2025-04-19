@@ -49,9 +49,9 @@ public class addPlaceStepDef extends Utils{
 	public void user_calls_with_http_request(String Resource,String method) {
 		 res =new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
 // constructor will be called with value of resource which you pass
+		 
 		APIResources resourceAPI =  APIResources.valueOf(Resource);
-		
-		
+		System.out.println(resourceAPI.getResource());
 	    if(method.equalsIgnoreCase("Post"))
 		 response =request.when().post(resourceAPI.getResource());
 	    else if(method.equalsIgnoreCase("Get"))
