@@ -34,29 +34,20 @@ public class addPlaceStepDef extends Utils{
 	
 	@Given("Add Place Payload with {string} {string} {string}")
 	public void add_place_payload_with(String name, String language, String address) throws IOException {
-	    // Write code here that turns the phrase above into concrete actions
-		
-		 request =given().spec(requestSpecification()).body(data.addPlace_Payload(name,language,address));
-		 
+	    
+		 request =given().spec(requestSpecification()).body(data.addPlace_Payload(name,language,address));	 
 	}
 	
-//	@Given("Add Place Payload")
-//	public void add_place_payload() throws IOException {
-//	   
-//	}
+
 
 	@When("user calls {string} with {string} http request")
 	public void user_calls_with_http_request(String Resource,String method) {
-		 res =new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
-// constructor will be called with value of resource which you pass
-		 
+		 res =new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();	 
 		APIResources resourceAPI =  APIResources.valueOf(Resource);
-		
 	    if(method.equalsIgnoreCase("Post"))
 		 response =request.when().post(resourceAPI.getResource());
 	    else if(method.equalsIgnoreCase("Get"))
-	    	response =request.when().get(resourceAPI.getResource());
-	    
+	    	response =request.when().get(resourceAPI.getResource());    
 	}
 
 	@Then("the API call got success with status code {int}")

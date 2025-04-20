@@ -34,7 +34,7 @@ public class Utils {
 		Properties prop = new Properties();
 		FileInputStream fis = new FileInputStream("C:\\Users\\hp\\eclipse-workspace\\Rest_Assured_API_Automation\\src\\test\\java\\resources\\global.properties");
 		prop.load(fis);
-	 return	prop.getProperty(key);
+	  return	prop.getProperty(key);
 		
 	}
 	
