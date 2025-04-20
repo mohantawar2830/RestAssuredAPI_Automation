@@ -37,5 +37,9 @@ public class TestDataBuild {
 				+ "    \"place_id\":\""+place_id+"\"\r\n"
 				+ "}";
 	}
+	
+	public void getAddBookPayload() {
+		System.out.println("Get me the add book payload data");
+	}
 
 }
