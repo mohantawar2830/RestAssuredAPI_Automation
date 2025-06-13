@@ -2,6 +2,11 @@ pipeline {
     agent any
     tools{
         maven 'Maven 3.9.10'
+        jdk 'JDK17'
+    }
+    environment{
+        JAVA_HOME = "${tool 'JDK17'}"
+        PATH = "{env.JAVA_HOME}/bin
     }
     stages {
         stage('Checkout') {
