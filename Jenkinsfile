@@ -4,26 +4,32 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-               git 'https://github.com/mohantawar2830/RestAssuredAPI_Automation'
+                git 'https://github.com/mohantawar2830/RestAssuredAPI_Automation'
             }
         }
+
         stage('Build') {
             steps {
-               sh 'mvn clean install'
+                sh 'mvn clean install'
             }
         }
+
         stage('Test') {
             steps {
                 sh 'mvn test'
             }
         }
-      post {
+    }
+
+    post {
         success {
-            echo "Build Success"
+            echo 'Build succeeded!'
         }
         failure {
-            echo "Build Failed"
+            echo 'Build failed!'
         }
-    }
+        always {
+            echo 'Build finished (success or fail).'
+        }
     }
 }
