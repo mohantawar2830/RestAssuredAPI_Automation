@@ -30,9 +30,10 @@ public class Utils {
 	}
 	
 	public static String getGlobalValue(String key) throws IOException {
-		
+		String basePath = System.getProperty("user.dir");
 		Properties prop = new Properties();
-		FileInputStream fis = new FileInputStream("C:\\Users\\hp\\eclipse-workspace\\Rest_Assured_API_Automation\\src\\test\\java\\resources\\global.properties");
+		
+		FileInputStream fis = new FileInputStream(basePath+"/src/test/java/resources/global.properties");
 		prop.load(fis);
 	  return	prop.getProperty(key);
 		
